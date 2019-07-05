@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.todos span:hover {
+  text-decoration: line-through;
+}
+
+.todos__content {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.far {
+  display: flex;
+  margin-left: 10px;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}

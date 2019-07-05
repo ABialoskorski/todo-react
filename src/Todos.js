@@ -3,17 +3,22 @@ const Todos = ({ todos, deleteTodo }) => {
 	const todoList = todos.length ? (
 		todos.map(todo => {
 			return (
-				<div className="collection-item" key={todo.id}>
-					<span>
-						{todo.id} {todo.content}
-					</span>
-					<button
+				<div className="todos collection-item" key={todo.id}>
+					<span
+						className="todos__content"
 						onClick={() => {
 							deleteTodo(todo.id);
 						}}
 					>
-						<i className="far fa-trash-alt" />
-					</button>
+						{todo.content}
+					</span>
+
+					<i
+						onClick={() => {
+							deleteTodo(todo.id);
+						}}
+						className="far fa-trash-alt"
+					/>
 				</div>
 			);
 		})
