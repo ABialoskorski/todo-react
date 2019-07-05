@@ -7,11 +7,18 @@ const Todos = ({ todos, deleteTodo }) => {
 					<span>
 						{todo.id} {todo.content}
 					</span>
+					<button
+						onClick={() => {
+							deleteTodo(todo.id);
+						}}
+					>
+						<i className="far fa-trash-alt" />
+					</button>
 				</div>
 			);
 		})
 	) : (
-		<p className="center">You have no todo's yet</p>
+		<p className="center">You have no todo's, be free.</p>
 	);
 	return <div className="todos collection">{todoList}</div>;
 };
