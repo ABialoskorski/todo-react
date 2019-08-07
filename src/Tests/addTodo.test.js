@@ -5,12 +5,12 @@ import AddTodo from "../addTodo";
 
 Enzyme.configure({ adapter: new Adapter() });
 
-describe("<AddTodo/>", function() {
+describe("Component AddTodo",() => {
   let wrapper;
   beforeEach(() => {
     wrapper = shallow(<AddTodo />);
   });
-  it("should add", function() {
+  it("should add",() => {
       const {add} = wrapper.instance();
       expect(add(1,2)).toEqual(3)
       //expect(wrapper.instance().add(1, 2)).toEqual(3);
