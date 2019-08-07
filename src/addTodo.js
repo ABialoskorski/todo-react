@@ -4,6 +4,9 @@ class AddTodo extends Component {
 	state = {
 		content: "",
 	};
+	add = (a,b) => {
+		return a+b;
+	};
 	handleChange = e => {
 		this.setState({
 			content: e.target.value,
