@@ -19,6 +19,9 @@ const Todos = ({ todos, deleteTodo }) => {
 						}}
 						className="far fa-trash-alt"
 					/>
+					<div className="szpaner">
+						<p>Hello World!</p>
+					</div>
 				</div>
 			);
 		})
