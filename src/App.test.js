@@ -4,8 +4,18 @@ import App from "./App";
 import Enzyme, { shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import AddTodo from "./addTodo";
+import renderer from "react-test-renderer";
+import Todos from "./Todos";
 
 Enzyme.configure({ adapter: new Adapter() });
+
+describe("Snapshot", () => {
+  it("matches the snapshot", () => {
+    const tree = renderer.create(<App />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+});
+
 
 describe("Component App.js", () => {
   let wrapper;
@@ -23,7 +33,7 @@ describe("Component App.js", () => {
     ]);
   });
 
-  it("renders without crashing", () => {
+  it("App renders without crashing", () => {
     const div = document.createElement("div");
     ReactDOM.render(<App />, div);
     ReactDOM.unmountComponentAtNode(div);
